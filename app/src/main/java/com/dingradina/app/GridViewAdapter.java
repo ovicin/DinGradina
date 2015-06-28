@@ -1,4 +1,6 @@
 package com.dingradina.app;
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,17 +9,14 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import java.util.ArrayList;
 
-/**
- * Created by ovi on 28/06/2015.
- */
-public class GridViewAdapter extends ArrayAdapter {
+public class GridViewAdapter extends ArrayAdapter<ImageItem> {
+
     private Context context;
     private int layoutResourceId;
-    private ArrayList data = new ArrayList();
+    private ArrayList<ImageItem> data = new ArrayList<ImageItem>();
 
-    public GridViewAdapter(Context context, int layoutResourceId, ArrayList data) {
+    public GridViewAdapter(Context context, int layoutResourceId, ArrayList<ImageItem> data) {
         super(context, layoutResourceId, data);
         this.layoutResourceId = layoutResourceId;
         this.context = context;
@@ -27,7 +26,7 @@ public class GridViewAdapter extends ArrayAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View row = convertView;
-        ViewHolder holder = null;
+        ViewHolder holder;
 
         if (row == null) {
             LayoutInflater inflater = ((Activity) context).getLayoutInflater();
@@ -39,6 +38,7 @@ public class GridViewAdapter extends ArrayAdapter {
         } else {
             holder = (ViewHolder) row.getTag();
         }
+
 
         ImageItem item = data.get(position);
         holder.imageTitle.setText(item.getTitle());

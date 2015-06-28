@@ -5,4 +5,16 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
+    <string-array name="image_ids">
+        <item>@drawable/rosii</item>
+        <item>@drawable/cartofi</item>
+        <item>@drawable/leustean</item>
+        <item>@drawable/spanac</item>
+        <item>@drawable/zuchini</item>
+        <item>@drawable/rosii</item>
+        <item>@drawable/cartofi</item>
+        <item>@drawable/leustean</item>
+        <item>@drawable/spanac</item>
+        <item>@drawable/zuchini</item>
+    </string-array>
 </resources>
